@@ -1,0 +1,17 @@
+{
+  "name": "VIP",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "debug": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "joi": "^17.7.0",
+    "mongoose": "^6.8.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
