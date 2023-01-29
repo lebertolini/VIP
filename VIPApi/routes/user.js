@@ -3,12 +3,13 @@ const router = express.Router()
 const schemas = require('../middlewares/validations/schemas')
 const permission = require('../middlewares/security/permission')
 const usersController = require('../controllers/user/user')
+const userService = require('../services/user')
 
 router.post(
   '/',
   schemas.user.create,
   permission.user.create,
-  usersController.create
+  usersController.create(userService.create)
 )
 
 module.exports = router
