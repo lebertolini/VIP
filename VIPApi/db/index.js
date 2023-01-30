@@ -5,15 +5,7 @@ const connect = async () => {
     .connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
-      poolSize: 10,
-      bufferMaxEntries: 0,
-      connectTimeoutMS: 10000,
-      socketTimeoutMS: 45000,
-      autoReconnect: true,
-      reconnectTries: 10,
-      reconnectInterval: 1000
+      maxPoolSize: 10
     })
     .then(() => {
       console.log('MongoDB connected.')

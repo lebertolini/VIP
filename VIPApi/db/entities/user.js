@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema({
       first: String,
       last: String
     }
+  },
+  token: {
+    value: String,
+    expiresAt: Date
   }
 })
 
