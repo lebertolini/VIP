@@ -1,6 +1,8 @@
+const { User } = require('../../../db/index')
+
 module.exports.create = (req, res, next) => {
   User.findOne(
-    { 'informations.username': request.body.informations.username },
+    { 'informations.username': req.body.informations.username },
     { _id: 1 }
   )
     .lean()
