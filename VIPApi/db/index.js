@@ -61,6 +61,5 @@ process.on('ETIMEDOUT', () => {
 
 // Exportando instância de conexão
 module.exports = {
-  connect,
-  User: require('./entities/user')
+  connect
 }

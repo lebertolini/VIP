@@ -1,4 +1,4 @@
-const { User } = require('../../../db/index')
+const { User } = require('../../../db/mongodb/entities/index')
 
 module.exports.create = (req, res, next) => {
   User.findOne(

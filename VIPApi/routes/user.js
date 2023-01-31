@@ -3,7 +3,7 @@ const router = express.Router()
 const schemas = require('../middlewares/validations/schemas')
 const permission = require('../middlewares/security/permission')
 const usersController = require('../controllers/user/user')
-const userService = require('../services/user')
+const { userService } = require('../services/index.js')
 
 router.post(
   '/',

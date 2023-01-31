@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const authController = require('../controllers/auth/auth')
-const userService = require('../services/user')
+const { userService } = require('../services/index')
 const validations = require('../middlewares/validations/schemas/index')
-router.get(
+router.post(
   '/account',
   [validations.auth.login],
   authController.authUser(userService)

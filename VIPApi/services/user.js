@@ -1,19 +1,13 @@
-const { User } = require('../db/index')
-const { user } = require('../middlewares/validations/schemas')
-
-const create = userPropeties => {
-  return User.create(userPropeties).exec()
-}
-
-const getUserByUsername = username => {
-  return User.findOne({ 'login.username': username }).exec()
-}
-
-const updateUser = user => {
-  return user.save()
-}
-
-module.exports = {
-  create,
-  getUserByUsername
+module.exports.UserService = userDb => {
+  return {
+    create: userPropeties => {
+      return userDb.create(userPropeties)
+    },
+    getUserByUsername: username => {
+      return userDb.getUserByUsername(username)
+    },
+    updateUser: user => {
+      return userDb.updateUser(user)
+    }
+  }
 }
