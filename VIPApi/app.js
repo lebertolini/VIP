@@ -15,6 +15,10 @@ app.use(morgan('tiny'))
 app.use(express.json())
 app.use(routes)
 
+app.use((err, request, response, next) => {
+  response.json(err)
+})
+
 app.listen(port, () => {
   console.log(`Server running at port ${port}`)
   db.connect()
