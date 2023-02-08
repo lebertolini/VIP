@@ -1,6 +1,5 @@
 const crypto = require('crypto')
 const bcrypt = require('bcrypt')
-const { rejects } = require('assert')
 
 module.exports.UserService = userDb => {
   return {
@@ -12,9 +11,9 @@ module.exports.UserService = userDb => {
       const user = await userDb.create(userPropeties)
       return user
     },
-    getUserByUsername: username => {
-      return userDb.getUserByUsername(username)
-    },
+    getUserByUsername: async username =>
+      await userDb.getUserByUsername(username),
+    getUserByToken: async token => await userDb.getUserByToken(token),
     generateToken: async user => {
       const token = {
         value: crypto.randomBytes(32).toString('hex')
