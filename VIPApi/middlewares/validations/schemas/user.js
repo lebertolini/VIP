@@ -16,3 +16,15 @@ module.exports.create = (req, res, next) => {
   })
   validate.joi(schema, req, next)
 }
+
+module.exports.addAsset = (req, res, next) => {
+  const schema = Joi.object({
+    userId: Joi.string().required(),
+    assetId: Joi.string().required(),
+    amount: Joi.number()
+      .min(1)
+      .required(),
+    purchaseDate: Joi.date().required()
+  }).required()
+  validate.joi(schema, req, next)
+}

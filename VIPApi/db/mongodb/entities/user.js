@@ -15,6 +15,9 @@ const userSchema = new mongoose.Schema(
     token: {
       value: String,
       expiresAt: Date
+    },
+    wallet: {
+      stocks: []
     }
   },
   { id: true, versionKey: false, timestamps: false }
